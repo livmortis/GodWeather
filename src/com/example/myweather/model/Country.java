@@ -1,11 +1,11 @@
-package model;
+package com.example.myweather.model;
 
 public class Country {
 	private String countryName;
 	private int countryId;
 	private String countryCode;
 	private int city_id;
-	public void setCountryeName(String countryName){
+	public void setCountryName(String countryName){
 		this.countryName=countryName;
 	}
 	public String getCountryName(){

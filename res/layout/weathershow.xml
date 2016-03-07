@@ -5,93 +5,99 @@
     android:orientation="vertical">
     <RelativeLayout 
         android:layout_width="match_parent"
-        android:layout_height="50dp">
-        <Button 
-            android:id="@+id/back"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"/>"
-        <TextView 
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            android:textSize="25sp"/>
-        <Button 
-            android:id="@+id/choose"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"/>
-        
+        android:layout_height="50dp"
+        android:background="#484E61">
+            <Button
+                android:id="@+id/change_city"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/home" />
+            <TextView 
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="#fff"
+                android:textSize="24sp"/>
+            <Button 
+                android:id="@+id/refresh"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/update"/>
     </RelativeLayout>
     <RelativeLayout 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#27A5F9">
         <TextView 
-            android:id="@+id/punish_date"
+            android:id="@+id/punish_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
-            android:textSize="10sp"/>
-        <TextView 
-            android:id="@+id/time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"/>
-        <LinearLayout 
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-            <Button 
-                android:id="@+id/change_city"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="changeCity"
-                android:textSize="15sp"
-                android:gravity="center"/>
-            <Button 
-                android:id="@+id/refresh"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="refresh"   
-                android:textSize="15sp"
-                android:gravity="center"/>
-        </LinearLayout>
+            android:textColor="#FFF"
+            android:textSize="18sp"/>
+      
+
         <LinearLayout 
             android:id="@+id/linear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:orientation="vertical">
             <TextView 
-                android:id="@+id/describe"
+                android:id="@+id/date"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textSize="30sp"/>
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:textColor="#FFF"
+                android:textSize="18sp"/>
+            <TextView 
+                android:id="@+id/rainOrsun"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:textColor="#FFF"
+                android:textSize="40sp"/>
             <LinearLayout 
                 
                 android:layout_width="wrap_content"
-                android:layout_height="28dp">
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
                 <TextView 
                     android:id="@+id/temp1"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentLeft="true"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="#FFF"
+                    android:textSize="40sp"
                     />
                 <TextView 
-                    android:layout_width="5dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="~"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#FFF"
+                    android:textSize="40sp"
                     />
                 <TextView 
                     android:id="@+id/temp2"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"/>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="#FFF"
+                    android:textSize="40sp"/>
             </LinearLayout>
             
         </LinearLayout>

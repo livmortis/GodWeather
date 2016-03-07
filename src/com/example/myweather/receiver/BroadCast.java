@@ -1,4 +1,6 @@
-package service;
+package com.example.myweather.receiver;
+
+import com.example.myweather.service.BackgroundUpdate;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -8,8 +10,8 @@ public class BroadCast extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		// TODO Auto-generated method stub
-		intent=new Intent(context,BackgroundUpdate.class);
-		context.startService(intent);
+		Intent i=new Intent(context,BackgroundUpdate.class);
+		context.startService(i);
 	}
 
 }

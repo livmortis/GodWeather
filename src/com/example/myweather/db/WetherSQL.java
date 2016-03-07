@@ -1,4 +1,4 @@
-package db;
+package com.example.myweather.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,16 +10,16 @@ public class WetherSQL extends SQLiteOpenHelper{
 		// TODO Auto-generated constructor stub
 	}
 
-	public final static String CREATE_PROVICE="create table province("
+	public static final String CREATE_PROVICE="create table province("
 			+"id integer primary key autoincrement,"//不是int
 			+"province_name text,"             //不是String
 			+"province_code text)";
-	public final static String CREATE_CITIES="create table cities("
+	public static final String CREATE_CITIES="create table cities("
 			+"id integer primary key autoincrement,"
 			+"city_name text,"
 			+"city_code text,"
 			+"province_id integer)";
-	public final static String CREATE_COUNTRY="create table country("
+	public static final String CREATE_COUNTRY="create table country("
 			+"id integer primary key autoincrement,"
 			+"country_name text,"
 			+"country_code text,"

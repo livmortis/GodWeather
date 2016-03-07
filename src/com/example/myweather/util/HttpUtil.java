@@ -1,36 +1,45 @@
-package util;
+package com.example.myweather.util;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+
+import com.example.myweather.activity.ChoosArea;
+
+import android.content.Context;
+import android.widget.Toast;
+
 import java.net.HttpURLConnection;
 
 public class HttpUtil {
-	private HttpURLConnection connection;
-	public String response;
-	public void sendHttpRequest(final String address,final HttpCallBackListener listener){
+	public static void sendHttpRequest(final String address,final HttpCallBackListener listener){
 		
 		
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
+				HttpURLConnection connection=null;
 				try{
+				
+
 				    URL url=new URL(address);
 				    connection=(HttpURLConnection)url.openConnection();
-				    connection.setReadTimeout(8000);
+				    
 				    connection.setRequestMethod("GET");
-				    connection.setConnectTimeout(8000);
+				    connection.setConnectTimeout(80000);
+				    connection.setReadTimeout(80000);
+				    
+				   
 				    InputStream in=connection.getInputStream();
 				    BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(in));
-				    StringBuilder builder=new StringBuilder();
-				    String line=null;
-				    if((line=bufferedReader.readLine())!=null){
-				    	builder.append(line);
+				    StringBuilder response=new StringBuilder();
+				    String line;
+				    while((line=bufferedReader.readLine())!=null){
+				    	response.append(line);
 				    }
-				    response=builder.toString();
 				    if(listener!=null){   //勿忘
-				    listener.onFinish(response);
+				    listener.onFinish(response.toString());
 				    }
 				}
 				catch(Exception e){
@@ -44,12 +53,10 @@ public class HttpUtil {
 					}
 				}
 			}
-				
-			
 		}).start();   //勿忘
 	}
-	public interface HttpCallBackListener{
-		public void onFinish(String response);
-		public void onError(Exception e);
+	public interface HttpCallBackListener{        //一个接口却与方法同级，而不是与类同级（新建一个类）
+		void onFinish(String response);
+		void onError(Exception e);
 	}
 }

@@ -1,4 +1,4 @@
-package model;
+package com.example.myweather.model;
 
 public class City {
 	private String cityName;
